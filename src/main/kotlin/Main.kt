@@ -1,7 +1,7 @@
-import advent.Day3
+import advent.Day4
 
 fun main(args: Array<String>) {
-    Day3.part1()
-    Day3.part2()
+    Day4.part1()
+    Day4.part2()
 }
 
