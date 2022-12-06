@@ -4,11 +4,10 @@ import java.io.InputStreamReader
 
 object ResourceFetcher {
     @Throws(FileNotFoundException::class)
-    fun use(resourcePath: String, operation: BufferedReader.() -> Unit) {
-        this::class.java.getResourceAsStream(resourcePath)?.let{ input ->
-            BufferedReader(InputStreamReader(input)).apply{
-                operation()
-                close()
+    inline fun <T> with(resourcePath: String, operation: BufferedReader.() -> T): T {
+        return this::class.java.getResourceAsStream(resourcePath)?.let{ input ->
+             BufferedReader(InputStreamReader(input)) .use { bufferedReader ->
+                bufferedReader.operation()
             }
         } ?: throw FileNotFoundException("Resource '$resourcePath' does not exist.")
     }
