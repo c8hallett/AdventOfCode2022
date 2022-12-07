@@ -2,11 +2,15 @@ package advent
 
 import ResourceFetcher
 
+fun main(args: Array<String>) {
+    Day1.invoke()
+}
+
 object Day1 {
     fun invoke() {
         val elfTotals = mutableListOf<Int>()
         var currentTotal = 0
-        ResourceFetcher.forEachLine("day_1_input.txt") { calorieCount ->
+        ResourceFetcher.forEachLine("input/day_1.txt") { calorieCount ->
             when {
                 calorieCount.isBlank() -> {
                     elfTotals.add(currentTotal)

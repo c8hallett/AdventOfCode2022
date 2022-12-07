@@ -2,6 +2,11 @@ package advent
 
 import ResourceFetcher
 
+fun main(args: Array<String>) {
+    Day2.part1()
+    Day2.part2()
+}
+
 object Day2 {
     private const val OFFSET_A = 'A'.code
     private const val OFFSET_X = 'X'.code
@@ -11,7 +16,7 @@ object Day2 {
     fun part1() {
         var totalScore = 0
 
-        ResourceFetcher.forEachLine("day_2_input.txt") { round ->
+        ResourceFetcher.forEachLine("input/day_2.txt") { round ->
             val moves = round.filterNot { it.isWhitespace() }
             val opponentMove = moves[0].code - OFFSET_A
             val suggestedMove = moves[1].code - OFFSET_X
@@ -27,7 +32,7 @@ object Day2 {
     fun part2() {
         var totalScore = 0
 
-        ResourceFetcher.forEachLine("day_2_input.txt") { round ->
+        ResourceFetcher.forEachLine("input/day_2.txt") { round ->
             val moves = round.filterNot { it.isWhitespace() }
             val opponentMove = moves[0].code - OFFSET_A
             val suggestedOutcome = moves[1].code - OFFSET_X

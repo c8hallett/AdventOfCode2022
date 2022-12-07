@@ -12,7 +12,7 @@ object Day5 {
     fun part1() {
         var stackComplete = false
         val stacks = mutableListOf<MutableList<Char>>()
-        ResourceFetcher.forEachLine("day_5_input.txt") { row ->
+        ResourceFetcher.forEachLine("input/day_5.txt") { row ->
             when{
                 !stackComplete -> {
                     if (row.all { it.isDigit() || it.isWhitespace() }) {
@@ -50,7 +50,7 @@ object Day5 {
     fun part2() {
         var stackComplete = false
         val stacks = mutableListOf<MutableList<Char>>()
-        ResourceFetcher.forEachLine("day_5_input.txt") { row ->
+        ResourceFetcher.forEachLine("input/day_5.txt") { row ->
             when{
                 !stackComplete -> {
                     if (row.all { it.isDigit() || it.isWhitespace() }) {

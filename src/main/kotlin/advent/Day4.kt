@@ -3,11 +3,16 @@ package advent
 import ResourceFetcher
 import checkValidMatch
 
+fun main(args: Array<String>) {
+    Day4.part1()
+    Day4.part2()
+}
+
 object Day4 {
     private val rangeRegex = Regex("(\\d.*)-(\\d.*),(\\d.*)-(\\d.*)")
     fun part1() {
         var overlapCounter = 0
-        ResourceFetcher.forEachLine("day_4_input.txt"){ line ->
+        ResourceFetcher.forEachLine("input/day_4.txt"){ line ->
             rangeRegex.checkValidMatch(line) { (s1, e1, s2, e2) ->
                 val sequence1 = Pair(s1.toInt(), e1.toInt())
                 val sequence2 = Pair(s2.toInt(), e2.toInt())
@@ -19,7 +24,7 @@ object Day4 {
 
     fun part2() {
         var overlapCounter = 0
-        ResourceFetcher.forEachLine("day_4_input.txt"){ line ->
+        ResourceFetcher.forEachLine("input/day_4.txt"){ line ->
             rangeRegex.checkValidMatch(line) { (s1, e1, s2, e2) ->
                 val sequence1 = Pair(s1.toInt(), e1.toInt())
                 val sequence2 = Pair(s2.toInt(), e2.toInt())

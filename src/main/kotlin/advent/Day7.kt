@@ -96,7 +96,7 @@ class FileDirectory(filePath: String){
 
 object Day7 {
     fun part1() {
-        val directory = FileDirectory("day_7_input.txt")
+        val directory = FileDirectory("input/day_7.txt")
 
         var totalSum = 0L
         directory.traverseSubdirectories { subdirectory, _ ->
@@ -107,7 +107,7 @@ object Day7 {
     }
 
     fun part2() {
-        val directory = FileDirectory("day_7_input.txt")
+        val directory = FileDirectory("input/day_7.txt")
 
         val spaceToRemove = directory.totalDirectorySpace() - 40_000_000L  // maximum directory space
         var minimumRemoval = Long.MAX_VALUE

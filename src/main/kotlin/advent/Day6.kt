@@ -16,7 +16,7 @@ object Day6 {
     }
 
     private fun getEndOfPacket(packetLength: Int): Int {
-        return ResourceFetcher.with("day_6_input.txt") {
+        return ResourceFetcher.with("input/day_6.txt") {
             readLine().windowed(packetLength, 1, partialWindows = false).indexOfFirst { packet ->
                 packet.toSet().size == packet.length
             } + packetLength

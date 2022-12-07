@@ -2,6 +2,11 @@ package advent
 
 import ResourceFetcher
 
+fun main(args: Array<String>) {
+    Day3.part1()
+    Day3.part2()
+}
+
 object Day3 {
     private const val OFFSET_A_LOWER = 'a'.code // 97
     private const val OFFSET_A_UPPER = 'A'.code // 65
@@ -10,7 +15,7 @@ object Day3 {
 
     fun part1() {
         var totalPriority = 0
-        ResourceFetcher.forEachLine("day_3_input.txt") { rucksack ->
+        ResourceFetcher.forEachLine("input/day_3.txt") { rucksack ->
             val half = rucksack.length / 2
             val r1 = rucksack.take(half)
             val r2 = rucksack.takeLast(half)
@@ -26,7 +31,7 @@ object Day3 {
 
     fun part2() {
         var totalPriority = 0
-        ResourceFetcher.use("day_3_input.txt") {
+        ResourceFetcher.with("input/day_3.txt") {
             readLines().chunked(3).forEach { elfGroup ->
                 println(KEY)
                 val dumbBadge = elfGroup.fold(Long.MAX_VALUE){ previousBytes, ruckSack ->
